@@ -73,7 +73,12 @@ public class GamePanel extends JPanel {
         this.snakeBody = snakeBody;
     }
 
-    public void paintApple() {
+    
+    /*
+     * A maça é feita manualmente atraves da união de duas formas :DrawLinee e um FillOval
+     */
+    public void paintApple() 
+    {
         g2d.setStroke(new BasicStroke(1.5f));
         int xPos = (int) apple.getX();
         int yPos = (int) apple.getY();
@@ -93,6 +98,8 @@ public class GamePanel extends JPanel {
             xPos = (int) position.getX();
             yPos = (int) position.getY();
             g2d.drawRoundRect(xPos + 2, yPos + 2, scale - 4, scale - 4, 2, 2);
+            //g2d.drawOval(xPos + 2, yPos + 2,10,10);
+
         }
 //        System.out.println(snakeColor);
 //        r = 0;

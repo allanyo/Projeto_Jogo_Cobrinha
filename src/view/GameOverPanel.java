@@ -57,8 +57,9 @@ public class GameOverPanel extends JPanel {
 
     }
 
-    public void paintGameOver() {
-        g2d.setColor(Color.red);
+    // IMPRESSÃO DE MSG NA TELA DO GAME OVER--------------------------------------------------
+    public void paintGameOver() { //imprime a msg Game Over na tela 
+        g2d.setColor(Color.yellow);
         Font font = new Font("Monospaced", Font.PLAIN, width / 10);
         FontRenderContext frc = g2d.getFontRenderContext();
         GlyphVector gv = font.createGlyphVector(frc, "GAME OVER");
@@ -67,7 +68,7 @@ public class GameOverPanel extends JPanel {
                 height * 7 / 20 - ((int) gv.getVisualBounds().getHeight() / 2));
     }
     
-    public void paintDifficulty() {
+    public void paintDifficulty() { //Mostra a dificuldade escolhida na tela 
         g2d.setColor(Color.green);
         Font font = new Font("Monospaced", Font.PLAIN, width / 25);
         FontRenderContext frc = g2d.getFontRenderContext();
@@ -77,7 +78,7 @@ public class GameOverPanel extends JPanel {
                 height * 9 / 20 - ((int) gv.getVisualBounds().getHeight() / 2));
     }
 
-    public void paintScore() {
+    public void paintScore() {//Mostra a pontuação final na tela
         Font font = new Font("Monospaced", Font.PLAIN, width / 25);
         FontRenderContext frc = g2d.getFontRenderContext();
         GlyphVector gv = font.createGlyphVector(frc, "Pontos: " + applesEaten);
@@ -86,7 +87,8 @@ public class GameOverPanel extends JPanel {
                 height * 11 / 20 - ((int) gv.getVisualBounds().getHeight() / 2));
     }
 
-    public void paintHighScore() {
+    public void paintHighScore() //Mostra a maior pontuação ate o momento
+    {
         Font font = new Font("Monospaced", Font.PLAIN, width / 25);
         FontRenderContext frc = g2d.getFontRenderContext();
         GlyphVector gv = font.createGlyphVector(frc, "High Score: " + highScore);
@@ -95,7 +97,7 @@ public class GameOverPanel extends JPanel {
                 height * 13 / 20 - ((int) gv.getVisualBounds().getHeight() / 2));
     }
 
-    public void paintPlayAgain() {
+    public void paintPlayAgain() { //imprime a msg Jogar Novamente na tela 
         g2d.setColor(Color.red);
         Font font = new Font("Monospaced", Font.PLAIN, width / 15);
         FontRenderContext frc = g2d.getFontRenderContext();
@@ -104,6 +106,8 @@ public class GameOverPanel extends JPanel {
                 width / 2 - ((int) gv.getVisualBounds().getWidth() / 2),
                 height * 16 / 20 - ((int) gv.getVisualBounds().getHeight() / 2));
     }
+    
+   //--------------------------------------------------------------
 
     public void update(String difficulty, int applesEaten, int highScore) {
         this.difficulty = difficulty;

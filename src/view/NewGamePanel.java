@@ -12,16 +12,16 @@ import java.awt.font.GlyphVector;
 import javax.swing.JPanel;
 
 /**
- * Drawn when game is first opened.
+ * Tela inicial do jogo
  *
- * @author Justin Beringer
  */
 public class NewGamePanel extends JPanel {
 
     private final int width, height, scale;
     Graphics2D g2d;
 
-    NewGamePanel(int width, int height, int scale) {
+    NewGamePanel(int width, int height, int scale) //entrada das dimensões da tela
+    {
         this.width = width;
         this.height = height;
         this.scale = scale;
@@ -41,7 +41,8 @@ public class NewGamePanel extends JPanel {
      * Ensures GUI is painted when the window is moved or hidden.
      */
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) 
+    {
 
         super.paintComponent(g);
         g2d = (Graphics2D) g;
@@ -73,7 +74,8 @@ public class NewGamePanel extends JPanel {
                 height * 6 / 10 - ((int) gv.getVisualBounds().getHeight() / 2));
     }
 
-    public void paintDots() {
+    public void paintDots() 
+    {
         g2d.setStroke(new BasicStroke(0.25f));
         g2d.setColor(Color.gray);
         for (int i = 0; i <= width / scale; i++) {

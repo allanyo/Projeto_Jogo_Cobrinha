@@ -11,16 +11,16 @@ import java.awt.font.GlyphVector;
 import javax.swing.JPanel;
 
 /**
- * Displays available difficulties before starting game.
- *
- * @author Justin Beringer
+ * Exibe as dificuldades disponíveis antes de iniciar o jogo.
  */
-public class DifficultyPanel extends JPanel {
+public class DifficultyPanel extends JPanel 
+{
 
     private final int width, height, scale;
     Graphics2D g2d;
 
-    DifficultyPanel(int width, int height, int scale) {
+    DifficultyPanel(int width, int height, int scale)
+    {
         this.width = width;
         this.height = height;
         this.scale = scale;

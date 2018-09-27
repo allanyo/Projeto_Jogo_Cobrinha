@@ -66,7 +66,8 @@ public final class Model {
     private final int TOTAL_GAMES_PLAYED_LOC = 3;
     private final int TOTAL_APPLES_EATEN_LOC = 4;
 
-    public Model() {
+    public Model() 
+    {
         loadData();
         occupiedPositions.add(apple);
         view = new View(WIDTH, HEIGHT, SCALE, snakeBody, apple);
@@ -87,11 +88,11 @@ public final class Model {
 
     /**
      * Generates an apple position randomly and avoids collisions.
-     *
-     * Originally tried to use HashSet.contains() to check for collisions, but
-     * it wasn't catching collisions.
+     * a Maça é gerada em uma posição aleatoria , que ainda N tenha sido oculpada 
+
      */
-    private void generateApple() {
+    private void generateApple() 
+    {
 
         int x = 0;
         int y = 0;
@@ -100,8 +101,10 @@ public final class Model {
             spaceIsOccupied = false;
             x = random.nextInt((int) MAX_INDEX_X) * SCALE;
             y = random.nextInt((int) MAX_INDEX_Y) * SCALE;
-            for (Point point : occupiedPositions) {
-                if (point.getX() == x && point.getY() == y) {
+            for (Point point : occupiedPositions) 
+            {
+                if (point.getX() == x && point.getY() == y) 
+                {
                     System.out.println("wtf");
                     spaceIsOccupied = true;
                 }
@@ -111,10 +114,12 @@ public final class Model {
     }
 
     /**
-     * Moves snake by moving tail position one grid square in front of the head
-     * in the current direction. The translated tail is then dequeued before
-     * being queued as the new head. If an apple is eaten, the snake is extended
-     * by not dequeuing the tail.
+     * 
+     * O movimento acontece seguindo o logica de movimentação de uma lista dinamica,
+     * assim que o primeiro elemento se move, a segunda parte segue para a posição anteriomente ocupada pela primeira
+     * e a terceira segue para a posição da segunda, esse processo se repete ate tds as partes terem se movido.
+     *  
+     *  Caso ela coma uma maça, ela crescer seguindo a logica de incrementação de uma fila,
      */
     public void moveSnake() 
     {
@@ -180,9 +185,10 @@ public final class Model {
     }
 
     /**
-     * Checks for snake collision with self and edges
+     * colisão com as borda
      */
-    private boolean collided(int nextHeadX, int nextHeadY) {
+    private boolean collided(int nextHeadX, int nextHeadY) 
+    {
         boolean snakeCollision = snakeBody.contains(new Point(nextHeadX, nextHeadY));
         boolean leftEdgeCollision = nextHeadX < 0;
         boolean rightEdgeCollision = nextHeadX >= WIDTH;
@@ -226,11 +232,12 @@ public final class Model {
     }
 
     /**
-     * Loads game stats from text file. If no text file exists, a new one is
-     * created.
+     * Carrega estatísticas de jogos do arquivo de texto. 
+     * Se nenhum arquivo de texto existir, um novo será   criada.
      *
      */
-    public void loadData() {
+    public void loadData() 
+    {
         Path path = Paths.get("./SnakeData.txt");
         String line;
         int dataIndex = 0;
@@ -247,7 +254,7 @@ public final class Model {
     }
 
     /**
-     * Saves game stats to text file. *
+     * Salva o
      */
     public void saveData() {
         for (int datum : data) {

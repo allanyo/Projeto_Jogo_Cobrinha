@@ -36,7 +36,7 @@ public class Controller {
      */
     public void directionInput(KeyEvent key) 
     {
-        int keyCode = key.getKeyCode();
+        int keyCode = key.getKeyCode();//retorno o codigo da tecla pressionada 
 
         if (isNewGame) {
             isNewGame = false;
@@ -78,7 +78,8 @@ public class Controller {
 
         }
 
-        switch (key.getKeyCode()) {
+        switch (key.getKeyCode()) 
+        {
             case KeyEvent.VK_UP:
                 if (direction != Direction.DOWN && !buttonPressed) {
                     direction = Direction.UP;

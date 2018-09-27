@@ -14,9 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * Main view as part of MVC design pattern.
- *
- * @author Justin Beringer
+ * Função principal VIEW, seguindo o padrão MVC
  */
 public final class View {
 
@@ -31,7 +29,7 @@ public final class View {
     private final int scale;
     private final List<Image> icons = new ArrayList<>();
 
-    public View(int width, int height, int scale, Deque<Point> snakeBody, Point apple) 
+    public View(int width, int height, int scale, Deque<Point> snakeBody, Point apple) //Contrutor da Clase
     {
         gamePanel = new GamePanel(width, height, scale, snakeBody, apple);
         newGamePanel = new NewGamePanel(width, height, scale);
@@ -44,7 +42,7 @@ public final class View {
     }
 
     /**
-     * Initializes GUI.
+     * Inicializa o GUI.
      */
     private void initGridView() {
         frame = new JFrame("Snake");
@@ -91,8 +89,9 @@ public final class View {
         content.repaint();
     }
 
-    public void chooseDifficulty() {
-        System.out.println("CHOOSE DIFFICULTY");
+    public void chooseDifficulty() 
+    {
+        System.out.println("SELEÇÃO DE FICICULDADE, Classe View");
         viewListener.setChoosingDifficulty(true);
         content.removeAll();
         content.add(difficultyPanel);
@@ -116,9 +115,10 @@ public final class View {
         gameOverPanel.update(difficulty, applesEaten, highScore);
     }
 
-    private void initIcons() {
+    private void initIcons() //Icone que aparece na barra de tarefas 
+    {
         try {
-            URL url = this.getClass().getClassLoader().getResource("icon/Icon_128.png");
+            URL url = this.getClass().getClassLoader().getResource("icon/Cobrinha.png");
             icons.add((new ImageIcon(url)).getImage());
         } catch (Exception e) {
         }

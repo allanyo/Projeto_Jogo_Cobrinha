@@ -1,0 +1,2 @@
+--> O main estar classe Controller
+--> A maça é montada manualmente atraves da união de duas formas geometrica na Clase: GamePanel
