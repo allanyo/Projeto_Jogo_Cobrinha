@@ -9,6 +9,8 @@ import java.awt.Point;
 import java.awt.RenderingHints;
 import java.util.Deque;
 import java.util.Random;
+
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -86,8 +88,10 @@ public class GamePanel extends JPanel {
         g2d.drawLine(xPos + scale / 2, yPos, xPos + scale / 2, yPos - 1);
         g2d.drawLine(xPos + scale / 2, yPos, xPos + scale - 1, yPos - 2);
         g2d.setColor(Color.red);
+      
         g2d.fillOval(xPos + 2, yPos + 2, scale - 4, scale - 3);
         g2d.fillOval(xPos + 4, yPos + 2, scale - 4, scale - 3);
+        
     }
 
     //cria a cobrinha
